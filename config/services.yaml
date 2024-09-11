@@ -20,5 +20,10 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    # Add the TokenAuthenticationService definition
+    App\Service\TokenAuthenticationService:
+        arguments:
+            $apiToken: '%env(API_TOKEN)%'
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
